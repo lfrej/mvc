@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.png">
+       
+        {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+                 <link rel="stylesheet" href="/build/app.css">
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ path('me') }}">Om mig</a></li>
+                <li><a href="{{ path('about') }}">Om kursen</a></li>
+                <li><a href="{{ path('report') }}">Redovisningstexter</a></li>
+                <li><a href="{{ path('lucky') }}">Lucky</a></li>
+            </ul>
+        </nav>
+        <header class="site-header" style="background-image: url({{ asset('img/header.jpg') }})">
+            {# <span class="site-title">Me-sida</span> #}
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

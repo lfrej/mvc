@@ -1,0 +1,12 @@
+{# templates/lucky_number.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+    <h1>Lucky</h1>
+    <p>Detta är det nuvarande "lucky number": <span class="lucky"> {{ number }} </span></p>
+
+    <img src="{{ asset('img/lucky.jpg') }}" alt="">
+{% endblock %}

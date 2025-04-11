@@ -1,0 +1,29 @@
+{# templates/about.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}Om kursen{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="column">
+        <h1>Om kursen</h1>
+        <p>Kursen Objektorienterade webbteknologier, mvc, handlar om objektorienterade programmeringstekniker i PHP. Kursen innehåller bland annat:</p>
+        <ul>
+            <li>Programmering i webbmiljö</li>
+            <li>Objektorienterad programmering i PHP</li>
+            <li>SQL med en databas</li>
+            <li>Utveckling av webbapplikationer i ett ramverk</li>
+            <li>Användning av verktyg och tekniker</li>
+        </ul>
+
+        <h2>Länkar</h2>
+        <ul>
+            <li><a href="url">Kursens Git-repo</a></li>
+            <li><a href="url">Me Git-repo</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <img src="img/coding.jpg" alt="Bild som representerar kursen">
+    </div>
+{% endblock %}
