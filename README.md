@@ -1,5 +1,5 @@
 # mvc
-![Alt text](img/coding.jpg)
+![Alt text](app/img/coding.jpg)
 Detta repo är me-sida till kursen mvc. Syftet för repot är att göra en presentation av kursen, mig själv och publicera redovisningstexter.
 
 ## Instruktion
