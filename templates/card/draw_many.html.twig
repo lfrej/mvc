@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Dra flera kort</h1>
+
+{% for c in card %}
+    <span class="card">{{ c }}</span>
+{% endfor %}
+
+<p>Antal kort kvar i kortleken: {{ count }}</p>
+
+{% endblock %}

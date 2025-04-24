@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Alla kort blandade</h1>
+
+
+{% for card in deckShuffle %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+
+{% endblock %}

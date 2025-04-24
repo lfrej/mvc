@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Kortspel</h1>
+
+<ul>
+    <li> <a href="{{ path('deck') }}">Sortera kortlek</a></li>
+
+    <li> <a href="{{ path('deck_shuffle') }}">Blanda kortlek</a></li>
+
+    <li> <a href="{{ path('draw_card') }}">Dra ett kort från kortlek</a></li>
+
+    <li> Dra flera kort:
+        <a href="{{ path('draw_card_num', {num: 5}) }}">5</a>
+        eller 
+        <a href="{{ path('draw_card_num', {num: 10}) }}">10</a>
+        kort.
+    </li>
+</ul>
+
+<h2> Om klasser </h2>
+<p> Klasserna som används är Card, CardGraphic och DeckOfCards. Klassen CardGraphic är ett arv av Card klassen. Klassen DeckOfCards är en komposition där klassen består av en annan klass, Card.</p> 
+<img src="{{ asset('img/uml.png') }}" alt="">
+
+{% endblock %}

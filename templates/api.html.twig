@@ -1,0 +1,45 @@
+{# templates/me.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %} JSON routes API {% endblock %}
+
+{% block body %}
+<h1> JSON API </h1>
+{% for item in data %}
+    <p><strong> {{ item.route }} </strong></p>
+    <p> {{ item.about }} </p>
+    {% if item.route == 'api/deck'%}
+        <a href="{{ path('api_deck') }}">Sorterad kortlek</a></li>
+    {% elseif( item.route == 'api/deck/shuffle') %}
+        <form method="post" action="">
+            <p>
+                <input type="submit" name="shuffle" value="Blanda kortlek"
+                onClick="this.form.action='{{ path('api_deck_shuffle') }}';"
+            </p>
+        </form>
+    {% elseif( item.route == 'api/deck/draw') %}
+            <form method="post" action="">
+            <p>
+                <input type="submit" name="draw" value="Dra 1 kort"
+                onClick="this.form.action='{{ path('api_deck_draw') }}';"
+            </p>
+        </form>
+    {% elseif ( item.route == 'api/deck/draw:{num<\\d+>}') %}
+        <form method="post" action="">
+            <p>
+                <input type="submit" name="draw" value="Dra 5 kort"
+                onClick="this.form.action='{{ path('api_deck_draw_multiple', {num: 5}) }}';"
+            </p>
+        </form>
+        <form method="post" action="">
+            <p>
+                <input type="submit" name="draw" value="Dra 10 kort"
+                onClick="this.form.action='{{ path('api_deck_draw_multiple', {num: 10}) }}';"
+            </p>
+        </form>
+    {% endif %}
+
+{% endfor %}
+
+{% endblock %}
