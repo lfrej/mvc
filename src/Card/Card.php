@@ -5,12 +5,12 @@ namespace App\Card;
 class Card
 {
     /**
-     * @var Value $value    String consisting cards value.
+     * @var string $value    String consisting cards value.
      */
     protected $value;
 
     /**
-     * @var Suit $suit  String consisting cards suit.
+     * @var string $suit  String consisting cards suit.
      */
     protected $suit;
 

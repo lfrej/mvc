@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Kortspel 21 [RESULTAT]</h1>
+
+{{ include('flash.html.twig') }}
+
+<form method="post" action="">
+    <p>
+        <input type="submit" name="restart" value="Börja om"
+            onClick="this.form.action='{{ path('restart') }}';"
+        >
+    </p>
+</form>
+
+
+<h2> Spelaren </h2>
+
+{% for card in player %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+
+
+<p> Summa: {{ sumHandPlayer }} </p>
+
+
+<h2> Banken </h2>
+
+{% for card in bank %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+
+<p> Summa: {{ sumHandBank }} </p>
+
+
+{% endblock %}

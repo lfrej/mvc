@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Dokumentation 21</h1>
+
+<h2> Flödesschema </h2>
+
+<img src="{{ asset('img/flodesschema.png') }}" alt="Flödesschema">
+
+
+
+<h2> Psuedokod </h2>
+<p> Jag valde att fokusera på att skapa psuedokod för CardHand klassen eftersom det var den klassen jag i början tänkte endast behövdes utöver de befintliga från tidigare kmom. </p>
+
+<img src="{{ asset('img/pseudokod.png') }}" alt="Pseudokod">
+
+
+<h2> Klasser </h2>
+<p> Jag tror att fyra klasser behövs för att skapa kortspelet: </p>
+<ul>
+    <li> Card </li>
+    <li> CardGraphic </li>
+    <li> CardHand </li>
+    <li> DeckOfCards </li>
+</ul>
+
+<p> Card-klassen används för att skapa enstaka kort. Klassen CardGraphic ärver från klassen Card och skapar visuella kort. Klassen CardHand är en komposition som består av en eller flera kort och representerar kort handen för en spelare. Klassen DeckOfCards är en komposition som representerar hela kortleken och består av 52 kort. </p>
+
+<p> I efterhand märkte jag att mycket kod skrevs i kontrollen för att skapa spelet och hålla koll på spelarna. Jag prövade då att skapa ytterligare en klass - Game klassen som utgör hela spelet och innehåller de två spelarna och kortleken. Detta gjorde så att mindre kod skrevs i kontrollen och kunde återanvändas med hjälp av klassen. </p>
+
+
+{% endblock %}

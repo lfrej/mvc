@@ -13,7 +13,6 @@ body {
     margin: 0 auto;
     max-width: 100%;
     background-color: white;
-    padding-bottom: 250px;
 }
 
 header {
@@ -47,10 +46,13 @@ nav ul li {
 
 main {
     padding: 0 25px;
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 250px;
 }
 
 main img {
-    width: 25%;
+    width: 50%;
 }
 
 main ul {
@@ -105,6 +107,10 @@ footer {
     font-size: 10em;
 }
 
+.red {
+    color: red;
+}
+
 .flash-notice {
     padding: 0.5em;
     color: #004085;
@@ -125,3 +131,7 @@ footer {
     content: "⚠";
 }
 
+code {
+    white-space: pre-wrap;
+    background: hsl(30,80%,90%);
+}

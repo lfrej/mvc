@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Kortspel 21 [SPELAR]</h1>
+
+<h2> Spelaren </h2>
+
+{% for card in player %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+
+<p> Summa: {{ sumHandPlayer }} </p>
+
+<h2> Banken </h2>
+
+{% for card in bank %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+
+<p> Summa: {{ sumHandBank }} </p>
+
+<form method="post" action="">
+    <p>
+        <input type="submit" name="draw" value="Dra kort"
+            onClick="this.form.action='{{ path('draw') }}';"
+        >
+        
+        <input type="submit" name="stop" value="Stanna"
+            onClick="this.form.action='{{ path('stop') }}';"
+        >
+
+        <input type="submit" name="restart" value="Börja om"
+            onClick="this.form.action='{{ path('restart') }}';"
+        >
+    </p>
+</form>
+
+{% endblock %}

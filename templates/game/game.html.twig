@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Kortspel 21 [START]</h1>
+
+<h2> Spelregler </h2>
+
+<p>Spelet går ut på att dra kort från en kortlek och få det sammanlagda värdet 21. Om man får över 21 förlorar man. </p>
+
+<p> Spelet börjar med en blandad kortlek. Spelaren börjar och drar det översta kortet från kortleken. Spelaren väljer sedan att stanna eller ta ytterligare ett kort. När spelaren stannar är det bankens tur. Banken plockar kort tills den stannar eller får summa över 21.</p>
+
+<p>Korten 2-10 har sitt vanliga värde. Korten knekt, dam och kung är värda 11, 12 och 13. Beroende på vad som passar spelaren bäst för tillfället är ess värt 1 eller 14..</p>
+
+<p> <b> Banken vinner: </b>  </p>
+<ul> 
+    <li> Om spelaren får över 21 </li>
+    <li> Om spelaren och banken får lika </li>
+    <li> Om banken har mer poäng än spelaren. </li>
+</ul>
+
+<p> <b> Spelaren vinner: </b> </p>
+<ul>
+    <li> Om banken får över 21. </li>
+</ul>
+
+<form method="post" action="">
+    <p>
+        <input type="submit" name="restart" value="Starta spelet"
+            onClick="this.form.action='{{ path('restart') }}';"
+        >
+    </p>
+</form>
+
+<a href="{{ path('doc') }}">Dokumentation</a>
+
+{% endblock %}

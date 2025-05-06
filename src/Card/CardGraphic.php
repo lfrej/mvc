@@ -8,10 +8,10 @@ namespace App\Card;
 class CardGraphic extends Card
 {
     /**
-     * @var Representation $representation  Array consisting cards in deck as UTF-8.
+     * @var array $representation  Array consisting cards in deck as UTF-8.
      */
     private $representation = [
-        'SA' => '🂡', 'HA' => '🂱', 'DA' => '🃁', 'CA' => '🃑',
+        'S1' => '🂡', 'H1' => '🂱', 'D1' => '🃁', 'C1' => '🃑',
         'S2' => '🂢', 'H2' => '🂲', 'D2' => '🃂', 'C2' => '🃒',
         'S3' => '🂣', 'H3' => '🂳', 'D3' => '🃃', 'C3' => '🃓',
         'S4' => '🂤', 'H4' => '🂴', 'D4' => '🃄', 'C4' => '🃔',
@@ -21,9 +21,9 @@ class CardGraphic extends Card
         'S8' => '🂨', 'H8' => '🂸', 'D8' => '🃈', 'C8' => '🃘',
         'S9' => '🂩', 'H9' => '🂹', 'D9' => '🃉', 'C9' => '🃙',
         'S10' => '🂪', 'H10' => '🂺', 'D10' => '🃊', 'C10' => '🃚',
-        'SJ' => '🂫', 'HJ' => '🂻', 'DJ' => '🃋', 'CJ' => '🃛',
-        'SQ' => '🂭', 'HQ' => '🂽', 'DQ' => '🃍', 'CQ' => '🃝',
-        'SK' => '🂮', 'HK' => '🂾', 'DK' => '🃎', 'CK' => '🃞',
+        'S11' => '🂫', 'H11' => '🂻', 'D11' => '🃋', 'C11' => '🃛',
+        'S12' => '🂭', 'H12' => '🂽', 'D12' => '🃍', 'C12' => '🃝',
+        'S13' => '🂮', 'H13' => '🂾', 'D13' => '🃎', 'C13' => '🃞',
     ];
 
     /**

@@ -40,6 +40,10 @@
         </form>
     {% endif %}
 
+    {% if item.route == 'api/game'%}
+        <a href="{{ path('api_game') }}">Se ställning i spel 21</a></li>
+    {% endif %}
+
 {% endfor %}
 
 {% endblock %}

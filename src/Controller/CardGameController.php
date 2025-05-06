@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class CardGameController extends AbstractController
 {
     #[Route("/card", name: "card")]
-    public function me(): Response
+    public function card(): Response
     {
         return $this->render('card/card.html.twig');
     }
@@ -52,16 +52,15 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck", name: "deck")]
     public function deck(
-        Request $request,
         SessionInterface $session
     ): Response {
-        if ($session->get('card_deck') == null) {
-            $deck = new DeckOfCards();
-        } else {
-            $deck = $session->get('card_deck');
 
-            $deck->sort();
+        $deck = new DeckOfCards();
+        if ($session->get('card_deck') !== null) {
+            $deck = $session->get('card_deck');
         }
+
+        $deck->sort();
 
         $data = [
             "cardDeck" => $deck->getString(),
@@ -74,7 +73,6 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck/shuffle", name: "deck_shuffle")]
     public function deckshuffle(
-        Request $request,
         SessionInterface $session
     ): Response {
 
@@ -94,7 +92,6 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck/draw", name: "draw_card")]
     public function drawcard(
-        Request $request,
         SessionInterface $session
     ): Response {
         $deck = $session->get('card_deck');
@@ -106,7 +103,7 @@ class CardGameController extends AbstractController
             $cardString[] = $card->getAsString();
         }
 
-        $countDeck = $deck->count();
+        $countDeck = $deck->getCount();
 
         $data = [
             "card" => $cardString,
@@ -118,10 +115,9 @@ class CardGameController extends AbstractController
         return $this->render('/card/draw.html.twig', $data);
     }
 
-    #[Route("/card/deck/draw:{num<\d+>}", name: "draw_card_num")]
+    #[Route("/card/deck/draw:<{num<\d+>}", name: "draw_card_num")]
     public function drawCardNum(
         int $num,
-        Request $request,
         SessionInterface $session
     ): Response {
         $deck = $session->get('card_deck');
@@ -133,7 +129,7 @@ class CardGameController extends AbstractController
             $cardString[] = $card->getAsString();
         }
 
-        $countDeck = $deck->count();
+        $countDeck = $deck->getCount();
 
         $data = [
             "card" => $cardString,

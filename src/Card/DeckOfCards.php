@@ -8,7 +8,7 @@ namespace App\Card;
 class DeckOfCards
 {
     /**
-     * @var Deck $deck   Array consisting cards in deck.
+     * @var array $deck   Array consisting cards in deck.
      */
     private $deck = [];
 
@@ -19,7 +19,7 @@ class DeckOfCards
     public function __construct()
     {
         $suits = array('H', 'D', 'C', 'S');
-        $values = array('A','2','3','4','5','6','7','8','9','10','J','Q','K');
+        $values = array('1','2','3','4','5','6','7','8','9','10','11','12','13');
 
         $this->deck  = [];
         foreach ($suits as $suit) {
@@ -38,7 +38,7 @@ class DeckOfCards
     public function createDefaultDeck()
     {
         $suits = array('H', 'D', 'C', 'S');
-        $values = array('A','2','3','4','5','6','7','8','9','10','J','Q','K');
+        $values = array('1','2','3','4','5','6','7','8','9','10','11','12','13');
 
         $defaultDeck = [];
         foreach ($suits as $suit) {
@@ -61,8 +61,9 @@ class DeckOfCards
         $sortedDeck = [];
 
         $defaultDeck = $this->createDefaultDeck();
+        $countDefaultDeck = count($defaultDeck);
 
-        for ($i = 0; $i < count($defaultDeck); $i++) {
+        for ($i = 0; $i < $countDefaultDeck; $i++) {
             $defaultCard = $defaultDeck[$i];
             foreach ($this->deck as $currentCard) {
                 if ($defaultCard->getSuit() === $currentCard->getSuit() && $defaultCard->getValue() === $currentCard->getValue()) {
@@ -111,7 +112,6 @@ class DeckOfCards
     /**
      * Shuffle deck.
      *
-     * @return void.
      */
     public function shuffle()
     {
@@ -151,7 +151,7 @@ class DeckOfCards
      *
      * @return int Int of how many cards is in deck.
      */
-    public function count()
+    public function getCount()
     {
         return count($this->deck);
     }

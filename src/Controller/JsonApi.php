@@ -35,6 +35,10 @@ class JsonApi extends AbstractController
                 'route' => 'api/deck/draw:{num<\d+>}',
                 'about' => "Drar flera kort från kortleken",
             ],
+            [
+                'route' => 'api/game',
+                'about' => "Se ställning i spelet 21",
+            ],
         ];
 
         return $this->render('api.html.twig', ['data' => $data]);
@@ -71,9 +75,15 @@ class JsonApi extends AbstractController
 
     #[Route("/api/deck", name: "api_deck", methods: ['GET'])]
     public function jsondeck(
-        Request $request,
         SessionInterface $session
     ): Response {
+
+        if (empty($session->get('card_deck'))) {
+            $data = [
+                "message" => "Session är tom",
+            ];
+        }
+
         if ($session->get('card_deck')) {
             $deck = $session->get('card_deck');
             $deck->sort();
@@ -83,10 +93,6 @@ class JsonApi extends AbstractController
             ];
 
             $session->set("card_deck", $deck);
-        } else {
-            $data = [
-                "message" => "Session är tom",
-            ];
         }
 
         $response = new JsonResponse($data);
@@ -96,11 +102,8 @@ class JsonApi extends AbstractController
         return $response;
     }
 
-
-
     #[Route("/api/deck/shuffle", name: "api_deck_shuffle", methods: ['POST'])]
     public function jsondeckshuffle(
-        Request $request,
         SessionInterface $session
     ): Response {
         $deck = $session->get('card_deck');
@@ -121,7 +124,6 @@ class JsonApi extends AbstractController
 
     #[Route("/api/deck/draw", name: "api_deck_draw", methods: ['POST'])]
     public function jsondeckdraw(
-        Request $request,
         SessionInterface $session
     ): Response {
         $deck = $session->get('card_deck');
@@ -152,7 +154,6 @@ class JsonApi extends AbstractController
     #[Route("/api/deck/draw:{num<\d+>}", name: "api_deck_draw_multiple", methods: ['POST'])]
     public function jsondeckdrawmultiple(
         int $num,
-        Request $request,
         SessionInterface $session
     ): Response {
         $deck = $session->get('card_deck');
@@ -172,6 +173,43 @@ class JsonApi extends AbstractController
         ];
 
         $session->set("card_deck", $deck);
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/game", name: "api_game", methods: ['GET'])]
+    public function game(
+        SessionInterface $session
+    ): Response {
+        $game = $session->get('game');
+
+        $player = $game->getPlayer();
+        $bank = $game->getBank();
+
+        $playerData = [
+            "Korthand" => $player->getString(),
+            "Poäng" => $player->getSum(),
+        ];
+
+        $bankData = [
+            "Korthand" => $bank->getString(),
+            "Poäng" => $bank->getSum(),
+        ];
+
+        $result = $game->getResult();
+        if ($player->getCount() == 0 || $bank->getCount() == 0) {
+            $result = "Spelet är inte klart";
+        }
+
+        $data = [
+            "Spelaren" => $playerData,
+            "Banken" => $bankData,
+            "Ställning" => $result,
+        ];
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(

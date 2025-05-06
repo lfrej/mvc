@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class MeTwig extends AbstractController
 {
     #[Route("/", name: "me")]
-    public function me(): Response
+    public function mepage(): Response
     {
         return $this->render('me.html.twig');
     }
