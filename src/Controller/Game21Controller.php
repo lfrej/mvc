@@ -42,7 +42,7 @@ class Game21Controller extends AbstractController
             "sumHandBank" => $bank->getSum()
         ];
 
-        $session->set("game", $game);
+        $session->set('game', $game);
 
         return $this->render('/game/play.html.twig', $data);
     }
