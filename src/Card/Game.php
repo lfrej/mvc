@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * Class that represents a game where you have two players and a deck of cards.
+ */
 class Game
 {
     /**
@@ -66,16 +69,30 @@ class Game
      * Draw card from deck and add card to card hand.
      *
      */
-    public function drawCard($currentPlayer)
+    public function addCard($drawnCard, $currentPlayer)
     {
-        $drawnCard = $this->deck->draw(1);
-
         $cardHand = $this->$currentPlayer;
 
         $cardHand->addCards($drawnCard);
 
         return $cardHand;
     }
+
+    /**
+     * Draw card from deck and add card to cardhand.
+     *
+     */
+    public function drawCard($currentPlayer)
+    {
+        $drawnCard = $this->deck->draw(1);
+
+        $cardHand = $this->addCard($drawnCard, $currentPlayer);
+
+        return $cardHand;
+    }
+
+
+
 
     /**
      * Get result.
@@ -90,7 +107,7 @@ class Game
             return 'Båda förlora!';
         }
 
-        if ($sumHandPlayer > 21 || $sumHandPlayer == $sumHandBank || $sumHandBank <= 21) {
+        if ($sumHandPlayer > 21 || $sumHandPlayer == $sumHandBank || $sumHandBank == 21) {
             return 'Banken vann!';
         }
 

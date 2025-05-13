@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * Class for cardhand that consists of cards.
+ */
 class CardHand
 {
     /**

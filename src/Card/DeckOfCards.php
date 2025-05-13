@@ -146,6 +146,17 @@ class DeckOfCards
         return $suits;
     }
 
+
+    /**
+     * Get deck.
+     *
+     * @return array Array of cards in deck.
+     */
+    public function getDeck(): array
+    {
+        return $this->deck;
+    }
+
     /**
      * Count deck.
      *

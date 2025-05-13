@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * A card that has a value and suit.
+ */
 class Card
 {
     /**
