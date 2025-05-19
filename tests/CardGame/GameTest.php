@@ -13,7 +13,7 @@ class GameTest extends TestCase
      * Test create game.
      */
     public function testCreateGame()
-    {   
+    {
         $game = new Game();
         $this->assertInstanceOf("\App\Card\Game", $game);
 
@@ -31,7 +31,7 @@ class GameTest extends TestCase
      * Test draw card in game.
      */
     public function testDrawCardGame()
-    {   
+    {
         $game = new Game();
 
         $player = $game->getPlayer();
@@ -49,9 +49,9 @@ class GameTest extends TestCase
      * Test player wins game.
      */
     public function testPlayerWinsGame()
-    {   
+    {
         $game = new Game();
-        
+
         $game->addCard([new Card(7, 'H')], 'player');
         $game->addCard([new Card(1, 'H')], 'player');
 
@@ -66,9 +66,9 @@ class GameTest extends TestCase
      * Test bank wins game.
      */
     public function testBankWinsGame()
-    {   
+    {
         $game = new Game();
-        
+
         $game->addCard([new Card(6, 'H')], 'player');
         $game->addCard([new Card(8, 'H')], 'player');
 
@@ -83,9 +83,9 @@ class GameTest extends TestCase
      * Test both loose game.
      */
     public function testBothLooseGame()
-    {   
+    {
         $game = new Game();
-        
+
         $game->addCard([new Card(13, 'H')], 'player');
         $game->addCard([new Card(9, 'H')], 'player');
 

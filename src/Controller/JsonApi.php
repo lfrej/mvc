@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
+use App\Repository\BookRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,6 +41,14 @@ class JsonApi extends AbstractController
             [
                 'route' => 'api/game',
                 'about' => "Se ställning i spelet 21",
+            ],
+            [
+                'route' => 'api/library/books',
+                'about' => "Se alla böcker",
+            ],
+                        [
+                'route' => 'api/library/books/{isbn}',
+                'about' => "Se en bok med ISBN 9781408855652",
             ],
         ];
 
@@ -135,7 +146,7 @@ class JsonApi extends AbstractController
             $cardString[] = $card->getAsString();
         }
 
-        $countDeck = $deck->count();
+        $countDeck = $deck->getCount();
 
         $data = [
             "card" => $cardString,
@@ -165,7 +176,7 @@ class JsonApi extends AbstractController
             $cardString[] = $card->getAsString();
         }
 
-        $countDeck = $deck->count();
+        $countDeck = $deck->getCount();
 
         $data = [
             "card" => $cardString,
@@ -209,6 +220,61 @@ class JsonApi extends AbstractController
             "Spelaren" => $playerData,
             "Banken" => $bankData,
             "Ställning" => $result,
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("api/library/books", name: "api_library", methods: ['GET'])]
+    public function library(
+        BookRepository $bookRepository
+    ): Response {
+        $books = $bookRepository
+            ->findAll();
+
+        $test = [];
+        foreach ($books as $book) {
+            $test[] = [
+                'Title' => $book->getTitle(),
+                'ISBN' => $book->getIsbn(),
+                'Author' => $book->getAuthor(),
+            ];
+        };
+
+        $data = [
+            "Books" => $test,
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("api/library/books/{isbn}", name: "api_library_isbn", methods: ['GET'])]
+    public function libraryIsbn(
+        ManagerRegistry $doctrine,
+        string $isbn
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Book::class)->findOneBy(['isbn' => $isbn]);
+
+
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'No book found for isbn '.$isbn
+            );
+        }
+
+        $data = [
+            'Title' => $book->getTitle(),
+            'ISBN' => $book->getIsbn(),
+            'Author' => $book->getAuthor(),
         ];
 
         $response = new JsonResponse($data);

@@ -27,14 +27,13 @@ nav {
     background-color: white;
 }
 
-nav ul li a {
+nav ul li a, a {
     text-decoration: underline;
     color: black;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, a:hover {
     text-decoration: none;
-    color: black;
 }
 
 nav ul li {
@@ -134,4 +133,50 @@ footer {
 code {
     white-space: pre-wrap;
     background: hsl(30,80%,90%);
+}
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+}
+
+form {
+    display: inline-block;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], .button {
+    background-color: #97b09f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+input[type=submit]:hover, .button:hover {
+    cursor: pointer;
+    background-color: #6d7c72;
 }

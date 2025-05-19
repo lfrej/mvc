@@ -44,6 +44,15 @@
         <a href="{{ path('api_game') }}">Se ställning i spel 21</a></li>
     {% endif %}
 
+    {% if item.route == 'api/library/books'%}
+        <a href="{{ path('api_library') }}">Se alla böcker i bibliotek</a></li>
+    {% endif %}
+
+
+    {% if ( item.route == 'api/library/books/{isbn}') %}
+        <a href="{{ path('api_library_isbn', {isbn: 9781408855652}) }}">Se en bok</a></li>
+    {% endif %}
+
 {% endfor %}
 
 {% endblock %}
