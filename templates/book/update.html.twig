@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Create book!{% endblock %}
+{% block title %}Update book{% endblock %}
 
 {% block body %}
 <style>
@@ -10,7 +10,7 @@
 
 <div class="example-wrapper">
     <a href="{{ path('library_show_by_id', {'id': book.getId}) }}">Show book</a>
-    <h1>Update book with id: {{ book.getId }}! 📚</h1>
+    <h1>Update {{book.getTitle}}! 📚</h1>
 
     <form method="post" action="">
         <input type="text" name="title" value="{{ book.getTitle }} ">
