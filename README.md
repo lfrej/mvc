@@ -1,3 +1,8 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lfrej/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/lfrej/mvc/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/lfrej/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/lfrej/mvc/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/lfrej/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/lfrej/mvc/build-status/main)
+
+
 # mvc
 ![Alt text](/public/img/coding.jpg)
 Detta repo är me-sida till kursen mvc. Syftet för repot är att göra en presentation av kursen, mig själv och publicera redovisningstexter.

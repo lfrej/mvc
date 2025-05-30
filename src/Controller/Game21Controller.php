@@ -84,19 +84,16 @@ class Game21Controller extends AbstractController
     ): Response {
         $game = $session->get("game");
         $deck = $game->getDeck();
-
         $bank = $game->getBank();
         $player = $game->getPlayer();
 
         if ($player->getSum() <= 21) {
-
             while ($bank->getSum() <= 21) {
                 $drawnCard = $deck->draw(1);
                 $bank->addCards($drawnCard);
             }
 
             $session->set("game", $game);
-
             $result = $game->getResult();
 
             if ($result == "Spelaren vann!") {
@@ -104,14 +101,14 @@ class Game21Controller extends AbstractController
                     'notice',
                     $result
                 );
+
+                return $this->redirectToRoute('result');
             }
 
-            if ($result == "Banken vann!") {
-                $this->addFlash(
-                    'warning',
-                    $result
-                );
-            }
+            $this->addFlash(
+                'warning',
+                $result
+            );
 
             return $this->redirectToRoute('result');
         }

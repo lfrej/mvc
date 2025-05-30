@@ -9,7 +9,10 @@
 {% for item in data %}
     <p><strong> {{ item.route }} </strong></p>
     <p> {{ item.about }} </p>
-    {% if item.route == 'api/deck'%}
+
+    {% if item.route == 'api/quote'%}
+        <a href="{{ path('api_quote') }}">Se citat</a></li>
+    {% elseif item.route == 'api/deck'%}
         <a href="{{ path('api_deck') }}">Sorterad kortlek</a></li>
     {% elseif( item.route == 'api/deck/shuffle') %}
         <form method="post" action="">
@@ -38,18 +41,11 @@
                 onClick="this.form.action='{{ path('api_deck_draw_multiple', {num: 10}) }}';"
             </p>
         </form>
-    {% endif %}
-
-    {% if item.route == 'api/game'%}
+    {% elseif item.route == 'api/game'%}
         <a href="{{ path('api_game') }}">Se ställning i spel 21</a></li>
-    {% endif %}
-
-    {% if item.route == 'api/library/books'%}
+    {% elseif item.route == 'api/library/books'%}
         <a href="{{ path('api_library') }}">Se alla böcker i bibliotek</a></li>
-    {% endif %}
-
-
-    {% if ( item.route == 'api/library/books/{isbn}') %}
+    {% elseif ( item.route == 'api/library/books/{isbn}') %}
         <a href="{{ path('api_library_isbn', {isbn: 9781408855652}) }}">Se en bok</a></li>
     {% endif %}
 

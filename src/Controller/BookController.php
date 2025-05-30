@@ -21,10 +21,7 @@ final class BookController extends AbstractController
     }
 
     #[Route('/library/create', name: 'library_create_get', methods: ['GET']) ]
-    public function createBook(
-        ManagerRegistry $doctrine,
-    ): Response {
-        $entityManager = $doctrine->getManager();
+    public function createBook(): Response {
 
         return $this->render('book/create.html.twig');
     }
@@ -45,11 +42,8 @@ final class BookController extends AbstractController
         $book->setIsbn($isbn);
         $book->setAuthor($author);
 
-        // tell Doctrine you want to (eventually) save the Product
-        // (no queries yet)
         $entityManager->persist($book);
 
-        // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
         return $this->redirectToRoute('library_show_all');

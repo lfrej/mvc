@@ -1,0 +1,83 @@
+{# templates/report.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics analys{% endblock %}
+
+{% block body %}
+    <h1>Metrics analys</h1>
+
+    <h2>Introduktion</h2>
+        <p>Denna uppgift går ut på att jobba med kodkvalitet och att förbättra koden programmet som har skrivits under kursens gång. Uppgiften använder sig av verktygen PhpMetrics och Scrutinizer för att ta fram rapporter på hur bra koden är. Rapporterna analyseras sedan genom sex stycken steg, de sex C:na, som leder till bättre kodkvalitet.</p>
+        
+        <h3>Codestyle</h3>
+            <p>Första steget är codestyle eller kodstil. Detta steget handlar om hur man skriver och strukturerar koden. Detta innebär bland annat intabbning, kommentarer, namngivning, versaler. Om kodstilen är enhetlig och genomgående i programmet leder det till att det blir enklare att behålla och underhålla koden i längden.</p>
+        
+        <h3>Coverage</h3>
+            <p>Det andra steget är coverage eller kodtäckning. Detta innebär hur stor andel av koden som täcks av enhetstester. Ju större procent desto mer testat och tillförlitligt är programmet.</p>
+            <p>Kodtäckningen för programmet visar en täckning på 17%. Detta visar på att en ganska liten del av koden täcks av enhetstester och är mindre tillförlitligt.</p>
+        
+        <h3>Complexity</h3>
+            <p>Steget complexity handlar om hur komplext det är att förstå, underhålla och ändra i programmet. Det mäter hur många beslutspunkter programmet har. Detta innebär varje gång programmet kan ta olika vägar beroende på ett villkor. Exempel på detta är if-satser, for-loopar och while-loopar. Varje gång programmet kan ta olika vägar ökar komplexiteten. Ju högre komplexitet, desto svårare blir det att testa och jobba med programmet. Därför ska man sträva efter så låg komplexitet som möjligt.</p>
+        
+        <h3>Cohesion</h3>
+            <p>Det fjärde steget är cohesion vilket innebär hur bra alla delar i modulen eller klassen är kopplade och håller ihop. En klass med hög cohesion hanterar en sak medan en klass med låg cohesion, så kallad Lack of cohesion, har många ansvarsområden. Målet är alltså att koden ska ha så hög cohesion som möjligt, det vill säga så lågt värde som möjligt.</p>
+
+        <h3>Coupling</h3>
+            <p>Hur många kopplingar eller beroende en specifik klass har till andra klasser kan man se genom det femte steget coupling. Om klassen använder eller används av andra klasser så skapas det ett beroende. Om klasserna är hårt kopplade så blir det svårare att exempelvis ändra koden utan att påverka andra klasser. Därför vill man hellre sträva efter klasser som är löst kopplade eftersom det är enklare att jobba med. Det finns två stycken värden som ingår i coupling. Afferent coupling (AC) visar hur många andra klasser som är beroende av den specifika klassen. Efferent coupling (EC) innebär hur många klasser den specifika klassen är beroende av.</p>
+            <p>PhpMetrics visar värden för både AC och EC. Det högsta värdet för AC i programmet är 3 och för EC är det 7 vilket refererar till hur många klasser som är beroende av varandra.</p>
+
+        <h3>CRAP</h3>
+            <p>Det sista steget är CRAP, Change Risk Analyzor and Predictor. Det är ett mått som analyserar och förutser hur svårt det är att underhålla koden i programmet. Mätvärdet baseras på hur komplext programmet är kontra hur stor kodtäckning metoden eller klassen har. Ju större kodtäckning desto mindre blir CRAP värdet. Ett högre CRAP värde tyder på mer komplex och svårare kod.</p>
+
+    <h2>Phpmetrics</h2>
+        <img src="img/metrics_1.png" alt="Metrics" class="img">
+        <p>Det första jag lägger märke till vid analys av rapporten från PhpMetrics är de runda färgade cirklarna som visar hur komplex koden är samt hur enkelt det är att underhålla den. Värdena visar på att många av programmets klasser har lite högre komplexitet, där högsta värdet är 9, och lägre maintainability index, där lägsta värdet är 50. </p>
+
+        <p>Vid analys lägger jag även märke till de åtta violations som PhpMetrics rapporterar om. Två av dessa är errors och handlar om att klasserna inte följer “single responsibility principle” vilket betyder att klasserna bland annat har lack of cohesion. Resterande av violations är warnings varav två stycken är class violations och fyra stycken package violations.</p>
+
+        <img src="img/metrics_2.png" alt="Metrics" class="img">
+        <p>Jag ser även att vissa klasser har ganska hög cohesion där högsta värdet är 9 vilket känns för högt eftersom man vill sträva efter så lågt värde som möjligt.</p>
+
+         <img src="img/metrics_3.png" alt="Metrics" class="img">
+        <p>Jag noterar även värdena för coupling. Högsta värdet för AC är 3 och EC 7, vilket jag anser vara rimligt då dessa behöver andra klasser för att fungera.</p>
+
+
+    <h2>Scrutinizer</h2>
+        <img src="img/metrics_4.png" alt="Metrics" class="img">
+        <p>Vid analys av rapporten från Scrutinizer ser jag först och främst att programmet har fått kod-betyget 10 “very good”. Jag anmärker däremot att kodtäckningen för programmet endast är 17%. Klasserna för card har 100% kodtäckning, klasserna för Dice har 14% och resterande har 0%.</p>
+
+        <p>Scrutinizer varnar även för fem stycken issues som har hittats vid analysen. Dessa handlar om oanvänd kod och variabler som inte blivit definierade tillräckligt.</p>
+        
+        <img src="img/metrics_5.png" alt="Metrics" class="img">
+        <p>Rapporten saknar mätvärden för cohesion och coupling men jag noterar värdena för komplexitet. Som man även såg på rapporten för PhpMetrics så har vissa klasser ett ganska högt värde för komplexitet där högsta värdet är 22.</p>
+
+        <p>Scrutinizer badges för rapporten:</p>
+        <a href="https://scrutinizer-ci.com/g/lfrej/mvc/?branch=main" class="metrics"> 
+            <img src="https://scrutinizer-ci.com/g/lfrej/mvc/badges/quality-score.png?b=main"> 
+        </a>
+
+        <a href="https://scrutinizer-ci.com/g/lfrej/mvc/code-structure/main/code-coverage" class="metrics"> 
+             <img src="https://scrutinizer-ci.com/g/lfrej/mvc/badges/coverage.png?b=main"> 
+        </a>
+
+        <a href="https://scrutinizer-ci.com/g/lfrej/mvc/inspections/7a3fb5e8-cde8-4772-99f9-bf4c205ff6a6/log" class="metrics"> 
+             <img src="https://scrutinizer-ci.com/g/lfrej/mvc/badges/build.png?b=main"> 
+        </a>
+
+
+    <h2>Förbättringar</h2>
+        <h3>1. Öka kodtäckningen</h3>
+            <p>Första förbättringen jag ser utifrån analysen är att öka kodtäckningen för klasserna Dice, DiceGraphic, DiceHand och Book. Detta tänker jag förbättra genom enhetstester för nämnda klasser.</p>
+
+        <h3>2. Minska komplexiteten i JsonApi</h3>
+            <p>Andra förbättringen är att minska komplexiteten. De klasser och kontroller med högst komplexitet är främst JsonApi. Detta är en kontroller jag använt för att skapa api:n för webbsidan och jag vet att filen har blivit väldigt stor med många metoder och olika ansvarsområden (LCOM). För att förbättra detta tänker jag att jag kan dela upp kontrollen i mindre filer som ansvarar över ett specifikt område. Exempelvis en kontroller för Library API och en för Game API och så vidare. Detta för att förbättra cohesion och minska komplexiteten. Jag kommer även se över om det går att förenkla koden något. Jag väljer att göra dessa förbättringar för just denna klass eftersom det är det klassen som har visat sig mest problematisk genomgående i båda rapporterna.<p/>
+
+        <h3>3. Ta bort oanvänd kod</h3>
+            <p>Jag ser även i rapporterna att programmet innehåller några klasser och kontroller som endast har använts i övningar i kursen. Dessa har gett ganska dåliga mätvärden vad gäller komplexiteten och även några errors. Detta är bland annat klasserna Product och ProductController. Jag tänker se över dessa och se om de är nödvändiga att ha kvar. Med dessa förbättringar hoppas jag att de sämre värdena försvinner.</p>
+
+
+    <h2>Diskussion</h2>
+    <p></p>
+
+{% endblock %}

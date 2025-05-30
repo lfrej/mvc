@@ -91,9 +91,6 @@ class Game
         return $cardHand;
     }
 
-
-
-
     /**
      * Get result.
      *
