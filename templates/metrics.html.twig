@@ -68,16 +68,36 @@
 
     <h2>Förbättringar</h2>
         <h3>1. Öka kodtäckningen</h3>
-            <p>Första förbättringen jag ser utifrån analysen är att öka kodtäckningen för klasserna Dice, DiceGraphic, DiceHand och Book. Detta tänker jag förbättra genom enhetstester för nämnda klasser.</p>
+            <p>Första förbättringen jag ser utifrån analysen är att öka kodtäckningen för klassen Book. Detta tänker jag förbättra genom enhetstester för nämnda klasser.</p>
 
-        <h3>2. Minska komplexiteten i JsonApi</h3>
-            <p>Andra förbättringen är att minska komplexiteten. De klasser och kontroller med högst komplexitet är främst JsonApi. Detta är en kontroller jag använt för att skapa api:n för webbsidan och jag vet att filen har blivit väldigt stor med många metoder och olika ansvarsområden (LCOM). För att förbättra detta tänker jag att jag kan dela upp kontrollen i mindre filer som ansvarar över ett specifikt område. Exempelvis en kontroller för Library API och en för Game API och så vidare. Detta för att förbättra cohesion och minska komplexiteten. Jag kommer även se över om det går att förenkla koden något. Jag väljer att göra dessa förbättringar för just denna klass eftersom det är det klassen som har visat sig mest problematisk genomgående i båda rapporterna.<p/>
+        <h3>Minska komplexiteten</h3>
+            <p>Andra förbättringen är att minska komplexiteten. Rapporterna visar att vissa klasser och kontroller är komplexa med många metoder och olika ansvarsområden. Detta gäller främst filen JsonApi. För att förbättra detta tänker jag om möjligt dela upp filen eller metoder. Detta för att förbättra cohesion och minska komplexiteten. Jag kommer även se över om det går att förenkla koden något. Jag kommer fokusera på JsonApi främst men om det finns tid kommer jag kika på andra filer exempelvis klassen DeckOfCards som även den rapporteras vara mer komplex. <p/>
 
-        <h3>3. Ta bort oanvänd kod</h3>
-            <p>Jag ser även i rapporterna att programmet innehåller några klasser och kontroller som endast har använts i övningar i kursen. Dessa har gett ganska dåliga mätvärden vad gäller komplexiteten och även några errors. Detta är bland annat klasserna Product och ProductController. Jag tänker se över dessa och se om de är nödvändiga att ha kvar. Med dessa förbättringar hoppas jag att de sämre värdena försvinner.</p>
+        <h3>3. Fixa issues</h3>
+            <p>Både PhpMetrics och Scrutinizer rapporterar om olika fel. Jag tror att det är bra att lösa dessa då de kan påverka mätvärdena för kodkvaliteten.</p>
+
+        <h3>4. Ta bort oanvänd kod</h3>
+            <p>Jag ser även i rapporterna att programmet innehåller några klasser och kontroller som endast har använts i övningar i kursen. Dessa har gett ganska dåliga mätvärden vad gäller komplexiteten och även några errors. Detta är bland annat klasserna Product och ProductController samt klasser och kontrollern för Dice. Jag tänker se över dessa och se om de är nödvändiga att ha kvar. Med dessa förbättringar hoppas jag att de sämre värdena försvinner.</p>
+
+
+    <h2>Resultat</h2>
+        <h3>1. Öka kodtäckningen</h3>
+            <p> Genom att lägga till enhetstester för klassen book så ökade kodtäckningen till 26%.</p>
+        
+        <h3>2. Minska komplexiteten</h3>
+            <p>Enligt PhpMetrics är genomsnittliga komplexiteten densamma som innan trots att jag har ändrat i koden för att minska komplexiteten. Ändringarna gjordes främst i kontrollern JsonApi där jag delade upp koden i olika mindre kontroller-filer. Jag tror att komplexiteten främst inte blev längre eftersom jag även tog bort oanvända klasser och filer.</p>
+        
+        <h3>3. Fixa issues</h3>
+            <p>Majoriteten av problemen/issues fixades. I scrutinizer fixades 2 issues och i phpmetrics fixades 3 fel. Detta resulterade i 2 varningar i PhpMetrics och 2 fel i Scrutinizer. De fel som är kvar gäller främst kod som jag inte skrivit själv.</p>
+        
+        <h3>4. Ta bort oanvänd kod</h3>
+            <p>Genom att ta bort klasserna och filerna för Dice och Product försvann både problem/issues och mer komplex kod. Men som tidigare nämnt ser man ingen direkt skillnad på exempelvis värdet för komplexiteten för programmet.</p>
 
 
     <h2>Diskussion</h2>
-    <p></p>
+    <p>Jag tror att det kan vara bra att använda PhpMetrics och Scrutinizer parallellt medans man skriver kod. Detta för att se över kodkvaliten och ha något att jobba mot för att få så bra kodkvalite som möjligt medan man kodar. Istället för att använda rapporterna när programmet är färdigt eftersom det kan bli mer mastigt och komplex att ändra färdig kod som redan funkar. Jag tror också att kanske inte bara verktygen utan bara att vara medveten om de 6 C:na kan göra så att kvaliteten på koden ökar. Detta eftersom man mer aktivt tänker på hur man kan göra koden bättre.</p>
+
+    <p>Jag upplever att verktygen är ett bra sätt att mäta kodkvaliteten på och en möjlighet att enklare kunna se hur man kan förbättra sin kod. En nackdel jag kan se är att verktygen känns väldigt petiga och det kan bli svårt att anpassa koden helt. Ibland kanske det inte heller är nödvändigt att anpassa koden helt gentemot rapporterna eftersom att det kan försvåra processen att skriva kod mer än nödvändigt.</p>
+
 
 {% endblock %}

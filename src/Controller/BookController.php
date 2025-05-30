@@ -21,7 +21,8 @@ final class BookController extends AbstractController
     }
 
     #[Route('/library/create', name: 'library_create_get', methods: ['GET']) ]
-    public function createBook(): Response {
+    public function createBook(): Response
+    {
 
         return $this->render('book/create.html.twig');
     }

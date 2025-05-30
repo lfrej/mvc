@@ -13,7 +13,7 @@ class BookTest extends TestCase
      * Test set and get title book.
      */
     public function testSetTitle()
-    {   
+    {
         $title = "Catching Fire";
 
         $book = new Book();
@@ -27,7 +27,7 @@ class BookTest extends TestCase
      * Test set author book.
      */
     public function testSetAuthor()
-    {   
+    {
         $author = "Suzanne Collins";
 
         $book = new Book();
@@ -41,7 +41,7 @@ class BookTest extends TestCase
      * Test set ISBN book.
      */
     public function testSetIsbn()
-    {   
+    {
         $isbn = "9781407132099";
 
         $book = new Book();
@@ -55,7 +55,7 @@ class BookTest extends TestCase
      * Test set id book.
      */
     public function testSetId()
-    {   
+    {
         $book = new Book();
         $book->setId(5);
 
