@@ -1,0 +1,30 @@
+{% extends 'test.html.twig' %}
+
+{% block title %}Project{% endblock %}
+
+{% block body %}
+<h1> Om projektet: Five-card draw </h1>
+<p> Five-card draw eller femkortspoker går ut på att få en så bra pokerhand som möjligt. Jag har valt att spelet endast har två spelare, en person och en dator.</p>
+
+<p>Spelet börjar med en ante vilket innebär att alla spelare lägger en och samma summa i potten. Därefter får varje spelare fem kort i sin hand. Spelarna ser inte de andra spelarnas kort. När alla spelare har fem kort var så börjar första rundan, så kallad satningsrundan.</p>
+
+<p>Den första spelaren kan antingen passa (check) eller satsa pengar i potten (bet). Om första spelaren har passat kan andra spelaren också passa eller satsa. Om första spelaren har satsat så kan andra spelaren antingen syna (call), höja (raise) eller lägga sig (fold). Att syna innebär att man går med på föregående spelares satsning och satsar samma summa till potten. Att höja innebär att man höjer föregående spelares satsning. Att lägga sig innebär att man inte går med på föregående spelares satsning och inte vill delta mer i spelet och den andra spelaren vinner. Första satsningrundan tar slut när antingen alla spelare har passat eller synat.</p>
+
+<p>Om båda spelarna är kvar efter första satsningsrundan kan alla spelare välja att byta upp till tre kort på deras hand. Detta för att försöka förbättra deras pokerhand. Efter denna runda börjar andra satsningsrundan som fungerar på samma sätt som första. Efter andra satningsrundan är det dags för showdown. Här visar alla spelare sin pokerhand och den med bästa handen vinner spelet och därmed potten.</p>
+
+<h2>Bästa pokerhänder i fallande ordning:</h2>
+<ul>
+    <li>Royal flush (Korten är i ordningen knekt, dam, kung, ess och är i samma färg)</li>
+    <li>Straight flush (Alla kort har valörer i följd och samma färg)</li>
+    <li>Four of a kind (Fyra kort i samma valör)</li>
+    <li>Full house (Tre kort i viss valör och två kort i annan valör)</li>
+    <li>Flush (Alla kort har samma färg)</li>
+    <li>Straight (Alla kort har valörer i följd, ej i samma färg)</li>
+    <li>Three of a kind (Tre kort i samma valör)</li>
+    <li>Two pair (Två kort i en viss valör och två kort i en annan valör)</li>
+    <li>One pair (Två kort i samma valör)</li>
+    <li>High card (Har inget av ovanstående pokerhänder)</li>
+</ul>
+
+
+{% endblock %}

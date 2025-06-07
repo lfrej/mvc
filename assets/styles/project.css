@@ -1,0 +1,72 @@
+@import "project/nav.css";
+@import "project/text.css";
+@import "project/flash.css";
+@import "project/form.css";
+
+* {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    background-color: #f5ead4;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: #f5ead4;
+}
+
+header {
+    height: 200px;
+    background-color: #f5ead4;
+    padding: 0 2rem;
+    margin-bottom: 25px;
+}
+
+
+
+main {
+    padding: 0 25px;
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 250px;
+}
+
+
+main ul {
+    margin-bottom: 25px;;
+}
+
+/** Flex */
+.row {
+    display: flex;
+}
+
+.column1 {
+    flex: 20%;
+    gap: 25px;
+}
+
+.column2 {
+    flex: 80%;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #c82c05;
+    margin-top: 50px;
+    padding: 25px;
+}
+
+/* Card */
+.card {
+    font-size: 10em;
+}

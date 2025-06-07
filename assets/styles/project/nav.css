@@ -1,0 +1,36 @@
+nav {
+    padding: 20px 0;
+}
+
+.navPage input[type=submit], .button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+}
+
+nav ul li a, a,
+.navPage input[type=submit], .button {
+    text-decoration: none;
+    color: #c82c05;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 0;
+}
+
+nav ul li a:hover, a:hover,
+.navPage input[type=submit]:hover, .button:hover  {
+    text-decoration: line-through;
+    background: none;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+.navHeader ul li {
+    display: inline;
+}
+

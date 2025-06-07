@@ -1,0 +1,42 @@
+{% extends "test.html.twig" %}
+
+{% block body %}
+    
+    {{ include('flash.html.twig') }}
+
+    <h1>Five card draw [showdown] </h1>
+
+    {% if gameResult == "Player" %}
+        <h3> {{ playerName }} won! You got {{ totalPot }} SEK </h3>
+    {% elseif gameResult == "Opponent" %}
+        <h3> Opponent won! They got {{ totalPot }} SEK </h3>
+    {% else %}
+    <h3> You got even! You both got {{ totalPot/2 }} SEK </h3>
+    {% endif %}
+
+    <p> Player has in total: {{ playerPot }} SEK </p>
+    <p> Opponent has in total: {{ opponentPot }} SEK </p>
+
+    <form method="post" action="">
+        <input type="submit" name="submit" value="New round"
+            onClick="this.form.action='{{ path('proj_restart') }}';">
+
+        <input type="submit" name="submit" value="Start new game"
+            onClick="this.form.action='{{ path('proj_restart') }}';">
+    </form>
+
+    <h2> {{ playerName }} </h2>
+    <p> {{ playerName }} hand: {{ playerResult }} </p>
+
+    {% for card in playerHand %}
+        <span class="card">{{ card }}</span>
+    {% endfor %}
+
+    <h2> Opponent </h2>
+    <p> Opponent hand: {{ opponentResult }} </p>
+
+    {% for card in opponentHand %}
+        <span class="card">{{ card }}</span>
+    {% endfor %}
+
+{% endblock %}

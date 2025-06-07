@@ -1,0 +1,29 @@
+{% extends "test.html.twig" %}
+
+{% block body %}
+    
+    {{ include('flash.html.twig') }}
+
+    {% if round == "round1" %}
+        <h1>Five card draw [Round 1] </h1>
+    {% elseif round == "draw" %}
+        <h1>Five card draw [Draw cards] </h1>
+    {% elseif round == "round2" %}
+        <h1>Five card draw [Round 2] </h1>
+    {% elseif round == "showDown" %}
+        <h1>Five card draw [showdown] </h1>
+    {% endif %}
+
+    <p> Current pot: {{ pot }} SEK </p>
+
+    {% if round == "round1" or round == "round2" %}
+        {{ include('project/bettingRound.html.twig') }}
+
+    {% elseif round == "draw" %}
+        {{ include('project/draw.html.twig') }}
+
+    {% elseif round == "showDown" %}
+        {{ include('project/result.html.twig') }}
+    {% endif %}
+
+{% endblock %}

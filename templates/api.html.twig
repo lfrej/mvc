@@ -22,7 +22,7 @@
             </p>
         </form>
     {% elseif( item.route == 'api/deck/draw') %}
-            <form method="post" action="">
+        <form method="post" action="">
             <p>
                 <input type="submit" name="draw" value="Dra 1 kort"
                 onClick="this.form.action='{{ path('api_deck_draw') }}';"

@@ -1,0 +1,25 @@
+{% extends 'test.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/build/project.css">
+{% endblock %}
+
+
+{% block title %}Project{% endblock %}
+
+
+{% block body %}
+<h1> Five card draw [start] </h1>
+
+<form method="post" action="">
+    <p>
+        <input type="text" name="name" placeholder="Enter player name"/>
+
+        <input type="submit" name="start" value="Start game and ante 10 SEK"
+            onClick="this.form.action='{{ path('proj_start') }}';"
+        >
+    </p>
+</form>
+
+{% endblock %}

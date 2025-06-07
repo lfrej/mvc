@@ -70,7 +70,7 @@
         <h3>1. Öka kodtäckningen</h3>
             <p>Första förbättringen jag ser utifrån analysen är att öka kodtäckningen för klassen Book. Detta tänker jag förbättra genom enhetstester för nämnda klasser.</p>
 
-        <h3>Minska komplexiteten</h3>
+        <h3>2. Minska komplexiteten</h3>
             <p>Andra förbättringen är att minska komplexiteten. Rapporterna visar att vissa klasser och kontroller är komplexa med många metoder och olika ansvarsområden. Detta gäller främst filen JsonApi. För att förbättra detta tänker jag om möjligt dela upp filen eller metoder. Detta för att förbättra cohesion och minska komplexiteten. Jag kommer även se över om det går att förenkla koden något. Jag kommer fokusera på JsonApi främst men om det finns tid kommer jag kika på andra filer exempelvis klassen DeckOfCards som även den rapporteras vara mer komplex. <p/>
 
         <h3>3. Fixa issues</h3>
@@ -85,10 +85,10 @@
             <p> Genom att lägga till enhetstester för klassen book så ökade kodtäckningen till 26%.</p>
         
         <h3>2. Minska komplexiteten</h3>
-            <p>Enligt PhpMetrics är genomsnittliga komplexiteten densamma som innan trots att jag har ändrat i koden för att minska komplexiteten. Ändringarna gjordes främst i kontrollern JsonApi där jag delade upp koden i olika mindre kontroller-filer. Jag tror att komplexiteten främst inte blev längre eftersom jag även tog bort oanvända klasser och filer.</p>
+            <p>Enligt PhpMetrics är genomsnittliga komplexiteten densamma som innan trots att jag har ändrat i koden för att minska komplexiteten. Ändringarna gjordes främst i kontrollern JsonApi där jag delade upp koden i olika mindre kontroller-filer. Jag tror att komplexiteten främst inte blev lägre eftersom jag även tog bort oanvända klasser och filer som kan ha påverkat komplexiteten. Däremot ser jag skillnad i cohesion där högsta värdet för LCOM nu är 4 där det tidigare var 9.</p>
         
         <h3>3. Fixa issues</h3>
-            <p>Majoriteten av problemen/issues fixades. I scrutinizer fixades 2 issues och i phpmetrics fixades 3 fel. Detta resulterade i 2 varningar i PhpMetrics och 2 fel i Scrutinizer. De fel som är kvar gäller främst kod som jag inte skrivit själv.</p>
+            <p>Majoriteten av problemen/issues fixades. I scrutinizer fixades 2 issues och i phpmetrics fixades 3 fel. Detta resulterade i 2 varningar är kvar för PhpMetrics och 2 fel är kvar för Scrutinizer. De fel som är kvar gäller främst kod som jag inte skrivit själv.</p>
         
         <h3>4. Ta bort oanvänd kod</h3>
             <p>Genom att ta bort klasserna och filerna för Dice och Product försvann både problem/issues och mer komplex kod. Men som tidigare nämnt ser man ingen direkt skillnad på exempelvis värdet för komplexiteten för programmet.</p>

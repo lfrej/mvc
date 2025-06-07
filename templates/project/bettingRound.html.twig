@@ -1,0 +1,48 @@
+<h2> {{ playerName }} </h2>
+        
+<p> {{ playerName }} hand: {{ playerResult }} </p>
+
+{% for card in playerHand %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+
+ {% if "raised" in lastTwoActions or "betted" in lastTwoActions %}
+    <form method="post" action="">
+        <p> 
+            <input type="submit" name="call" value="Call"
+                onClick="this.form.action='{{ path('proj_call') }}';">
+
+            <input type="number" name="raise" value="1">
+            <input type="submit" name="do_it" value="Raise"
+                onClick="this.form.action='{{ path('proj_raise')}}';">
+
+            <input type="submit" name="fold" value="Fold"
+                onClick="this.form.action='{{ path('proj_fold') }}';">
+        </p>
+    </form>
+{% else %}
+    <form method="post" action="">
+        <p> 
+            <input type="submit" name="check" value="Check"
+                onClick="this.form.action='{{ path('proj_check') }}';">
+
+            <input type="number" name="bet" value="0">
+            <input type="submit" name="do_it" value="Bet"
+                onClick="this.form.action='{{ path('proj_bet')}}';">
+        </p>
+    </form>
+{% endif %}
+
+
+<h2> Opponent </h2>
+    <p> Opponent hand: {{ opponentResult }} </p>
+
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <br>
+    {% for card in opponentHand %}
+        <span class="card">{{ card }}</span>
+    {% endfor %}

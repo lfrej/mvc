@@ -10,7 +10,7 @@ class CardHand
     /**
      * @var array $hand   Array consisting cards.
      */
-    private $hand = [];
+    protected $hand = [];
 
     /**
      * Constructor to initiate a card hand with one card in hand.
@@ -21,15 +21,39 @@ class CardHand
         $this->addCards($drawnCards);
     }
 
+    public function getCards(): array
+    {
+        return $this->hand;
+    }
+
     /**
      * Add cards to card hand.
      *
      */
     public function addCards($drawnCards)
     {
-        foreach ($drawnCards as $card) {
-            $this->hand[] = $card;
+        if (is_array($drawnCards)) {
+            foreach ($drawnCards as $card) {
+                $this->hand[] = $card;
+            }
+        } else {
+            $this->hand[] = $drawnCards;
         }
+    }
+
+    /**
+     * Remove cards from card hand.
+     *
+     */
+    public function removeCards($removedCards)
+    {
+        foreach ($removedCards as $i) {
+            if (isset($this->hand[$i])) {
+                unset($this->hand[$i]);
+            }
+        }
+
+        $this->hand = array_values($this->hand);
     }
 
     /**
@@ -78,5 +102,4 @@ class CardHand
     {
         return count($this->hand);
     }
-
 }

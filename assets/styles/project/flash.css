@@ -1,0 +1,19 @@
+.flash-notice {
+    padding: 0.5em;
+    color: #121212;
+    background-color: #057c51;
+    border-color: #f5ead4;
+}
+.flash-notice:before {
+    content: "ⓘ";
+}
+
+.flash-warning {
+    padding: 0.5em;
+    color: #121212;
+    background-color: #004aad;
+    border-color: #004aad;
+}
+.flash-warning:before {
+    content: "⚠";
+}

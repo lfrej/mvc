@@ -1,0 +1,34 @@
+{% extends 'test.html.twig' %}
+
+{% block title %}Project API{% endblock %}
+
+{% block body %}
+<h1> Projekt API </h1>
+{% for item in data %}
+    <p><strong> {{ item.route }} </strong></p>
+    <p> {{ item.about }} </p>
+
+    {% if item.route == 'api/proj/player'%}
+        <a href="{{ path('api_player') }}">Se spelarens spel</a></li>
+
+    {% elseif item.route == 'api/proj/opponent'%}
+        <a href="{{ path('api_opponent') }}">Se motståndarens spel</a></li>
+
+    {% elseif( item.route == 'api/proj/bank') %}
+        <a href="{{ path('api_bank') }}">Se spelets nuvarande pott och bet</a></li>
+
+    {% elseif( item.route == 'api/proj/draw') %}
+        <form method="post" action="">
+            <p>
+                <input type="submit" name="draw" value="Byt ett kort för spelaren"
+                onClick="this.form.action='{{ path('api_draw') }}';"
+            </p>
+        </form>
+
+    {% elseif( item.route == 'api/proj/result') %}
+        <a href="{{ path('api_result') }}">Se resultatet av spelet </a></li>
+    {% endif %}
+
+{% endfor %}
+
+{% endblock %}

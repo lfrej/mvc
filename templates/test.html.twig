@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.png">
+       
+        {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('project') }}
+                 <link rel="stylesheet" href="/build/project.css">
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('project') }}
+            {% block importmap %}{{ importmap('project') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navHeader">
+            <ul>
+                <li><a href="{{ path('me') }}">Om mig</a></li>
+                <li><a href="{{ path('about') }}">Om kursen</a></li>
+                <li><a href="{{ path('report') }}">Redovisningstexter</a></li>
+                <li><a href="{{ path('lucky') }}">Lucky</a></li>
+                <li><a href="{{ path('card') }}">Card</a></li>
+                <li><a href="{{ path('game') }}">Game</a></li>
+                <li><a href="{{ path('library') }}">Library</a></li>
+                <li><a href="{{ path('metrics') }}">Metrics</a></li>
+                <li><a href="{{ path('project') }}">Project</a></li>
+            </ul>
+        </nav>
+        <header class="site-header" style="background-image: url({{ asset('img/cards.jpg') }})">
+            {# <span class="site-title">Me-sida</span> #}
+        </header>
+        <main>
+        <div class="row">
+            <div class="column1">
+                <nav class="navPage">
+                    <ul>
+                        <form method="post" action="">
+                            <input type="submit" name="submit" value="Start new game"
+                                onClick="this.form.action='{{ path('proj_restart') }}';">
+                        </form>
+                        <li><a href="{{ path('proj_about') }}">About</a></li>
+                        <li><a href="{{ path('proj_api') }}">API</a></li>
+                    </ul>
+                        
+                </nav>
+            </div>
+            <div class="column2">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        </main>
+        <footer>
+            <p>Copyright &copy; 2025</p>
+        </footer>
+    </body>
+</html>

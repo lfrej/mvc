@@ -1,0 +1,23 @@
+<h2> {{ playerName }} </h2>
+        
+<p> Your hand: {{ playerResult }} </p>
+
+<form method="post" action="">
+    {% for card in playerHand %}
+            <input type="checkbox" name="remove[]" value="{{ loop.index0 }}"/>
+            <span class="card">{{ card }}</span>   
+    {% endfor %}
+    <br>
+    <input type="submit" name="submit" value="Change cards"
+        onClick="this.form.action='{{ path('proj_draw') }}';">
+</form>
+
+<h2> Opponent </h2>
+    <p> Opponent hand: {{ opponentResult }} </p>
+
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+    <span class="card">🂠</span>
+

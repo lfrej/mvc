@@ -5,7 +5,7 @@
 
 # mvc
 ![Alt text](/public/img/coding.jpg)
-Detta repo är me-sida till kursen mvc. Syftet för repot är att göra en presentation av kursen, mig själv och publicera redovisningstexter.
+Detta repo är me-sida till kursen mvc. Syftet för repot är att göra en presentation av kursen, mig själv, publicera redovisningstexter samt visa upp kursmoment. Här finns även projektet som är ett femkortpokerspel.
 
 ## Instruktion
 Klona GitHub repot i vald mapp genom:
