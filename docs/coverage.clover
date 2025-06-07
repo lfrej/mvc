@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1749295897">
-  <project timestamp="1749295897">
+<coverage generated="1749298502">
+  <project timestamp="1749298502">
     <file name="/home/liv/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="9" coveredelements="9"/>
@@ -970,7 +970,7 @@
     </file>
     <file name="/home/liv/dbwebb-kurser/mvc/me/report/src/Project/EvaluateCardHand.php">
       <class name="App\Project\EvaluateCardHand" namespace="global">
-        <metrics complexity="24" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="63" elements="70" coveredelements="68"/>
+        <metrics complexity="24" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="62" elements="69" coveredelements="67"/>
       </class>
       <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="13"/>
       <line num="14" type="stmt" count="13"/>
@@ -1000,35 +1000,36 @@
       <line num="78" type="stmt" count="8"/>
       <line num="81" type="stmt" count="8"/>
       <line num="83" type="stmt" count="8"/>
-      <line num="84" type="stmt" count="4"/>
+      <line num="85" type="stmt" count="8"/>
+      <line num="86" type="stmt" count="8"/>
       <line num="87" type="stmt" count="8"/>
-      <line num="88" type="stmt" count="8"/>
-      <line num="89" type="stmt" count="8"/>
-      <line num="90" type="stmt" count="1"/>
-      <line num="94" type="stmt" count="8"/>
-      <line num="102" type="method" name="checkRoyalFlush" visibility="public" complexity="4" crap="4" count="13"/>
+      <line num="88" type="stmt" count="5"/>
+      <line num="92" type="stmt" count="4"/>
+      <line num="100" type="method" name="checkRoyalFlush" visibility="public" complexity="4" crap="4" count="13"/>
+      <line num="102" type="stmt" count="13"/>
       <line num="104" type="stmt" count="13"/>
-      <line num="106" type="stmt" count="13"/>
-      <line num="107" type="stmt" count="9"/>
+      <line num="105" type="stmt" count="9"/>
+      <line num="108" type="stmt" count="5"/>
+      <line num="109" type="stmt" count="5"/>
       <line num="110" type="stmt" count="5"/>
-      <line num="111" type="stmt" count="5"/>
-      <line num="112" type="stmt" count="5"/>
+      <line num="113" type="stmt" count="5"/>
       <line num="115" type="stmt" count="5"/>
       <line num="117" type="stmt" count="5"/>
-      <line num="119" type="stmt" count="5"/>
-      <line num="120" type="stmt" count="4"/>
-      <line num="123" type="stmt" count="1"/>
-      <line num="131" type="method" name="checkPokerHand" visibility="public" complexity="7" crap="7" count="13"/>
+      <line num="118" type="stmt" count="4"/>
+      <line num="121" type="stmt" count="1"/>
+      <line num="129" type="method" name="checkPokerHand" visibility="public" complexity="7" crap="7" count="13"/>
+      <line num="131" type="stmt" count="13"/>
+      <line num="132" type="stmt" count="13"/>
       <line num="133" type="stmt" count="13"/>
       <line num="134" type="stmt" count="13"/>
-      <line num="135" type="stmt" count="13"/>
       <line num="136" type="stmt" count="13"/>
-      <line num="138" type="stmt" count="13"/>
-      <line num="139" type="stmt" count="4"/>
-      <line num="142" type="stmt" count="10"/>
-      <line num="143" type="stmt" count="1"/>
-      <line num="146" type="stmt" count="9"/>
-      <line num="147" type="stmt" count="3"/>
+      <line num="137" type="stmt" count="4"/>
+      <line num="140" type="stmt" count="10"/>
+      <line num="141" type="stmt" count="1"/>
+      <line num="144" type="stmt" count="9"/>
+      <line num="145" type="stmt" count="3"/>
+      <line num="148" type="stmt" count="8"/>
+      <line num="149" type="stmt" count="8"/>
       <line num="150" type="stmt" count="8"/>
       <line num="151" type="stmt" count="8"/>
       <line num="152" type="stmt" count="8"/>
@@ -1036,13 +1037,11 @@
       <line num="154" type="stmt" count="8"/>
       <line num="155" type="stmt" count="8"/>
       <line num="156" type="stmt" count="8"/>
-      <line num="157" type="stmt" count="8"/>
       <line num="158" type="stmt" count="8"/>
+      <line num="159" type="stmt" count="8"/>
       <line num="160" type="stmt" count="8"/>
-      <line num="161" type="stmt" count="8"/>
-      <line num="162" type="stmt" count="8"/>
-      <line num="165" type="stmt" count="0"/>
-      <metrics loc="168" ncloc="138" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="63" elements="70" coveredelements="68"/>
+      <line num="163" type="stmt" count="0"/>
+      <metrics loc="166" ncloc="136" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="62" elements="69" coveredelements="67"/>
     </file>
     <file name="/home/liv/dbwebb-kurser/mvc/me/report/src/Project/FiveCardDrawGame.php">
       <class name="App\Project\FiveCardDrawGame" namespace="global">
@@ -1222,7 +1221,7 @@
     </file>
     <file name="/home/liv/dbwebb-kurser/mvc/me/report/src/Project/Player.php">
       <class name="App\Project\Player" namespace="global">
-        <metrics complexity="12" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="31" elements="42" coveredelements="40"/>
+        <metrics complexity="12" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="42" coveredelements="42"/>
       </class>
       <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="27"/>
       <line num="24" type="stmt" count="27"/>
@@ -1255,18 +1254,18 @@
       <line num="115" type="stmt" count="5"/>
       <line num="116" type="stmt" count="5"/>
       <line num="118" type="stmt" count="5"/>
-      <line num="128" type="method" name="draw" visibility="public" complexity="3" crap="3.01" count="1"/>
+      <line num="128" type="method" name="draw" visibility="public" complexity="3" crap="3" count="1"/>
       <line num="130" type="stmt" count="1"/>
       <line num="131" type="stmt" count="1"/>
       <line num="132" type="stmt" count="1"/>
       <line num="134" type="stmt" count="1"/>
       <line num="136" type="stmt" count="1"/>
-      <line num="137" type="stmt" count="0"/>
+      <line num="137" type="stmt" count="1"/>
       <line num="141" type="stmt" count="1"/>
       <line num="142" type="stmt" count="1"/>
       <line num="143" type="stmt" count="1"/>
       <line num="145" type="stmt" count="1"/>
-      <metrics loc="148" ncloc="94" classes="1" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="31" elements="42" coveredelements="40"/>
+      <metrics loc="148" ncloc="94" classes="1" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="42" coveredelements="42"/>
     </file>
     <file name="/home/liv/dbwebb-kurser/mvc/me/report/src/Repository/BookRepository.php">
       <class name="App\Repository\BookRepository" namespace="global">
@@ -1276,6 +1275,6 @@
       <line num="16" type="stmt" count="0"/>
       <metrics loc="44" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
-    <metrics files="25" loc="2957" ncloc="2451" classes="24" methods="154" coveredmethods="95" conditionals="0" coveredconditionals="0" statements="971" coveredstatements="366" elements="1125" coveredelements="461"/>
+    <metrics files="25" loc="2955" ncloc="2449" classes="24" methods="154" coveredmethods="96" conditionals="0" coveredconditionals="0" statements="970" coveredstatements="366" elements="1124" coveredelements="462"/>
   </project>
 </coverage>

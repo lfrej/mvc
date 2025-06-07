@@ -155,8 +155,11 @@ class EvaluateCardHand
             "High rank" => [1, 1, 1, 1, 1]
         ];
 
-        $pokerHand = $hands[$ranks]; 
-
-        return $pokerHand;
+        foreach ($hands as $x => $y) {
+            if ($ranks === $y) {
+                return $x;
+            }
+        }
+        return "none";
     }
 }
