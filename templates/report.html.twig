@@ -49,6 +49,17 @@
 
 
     <h2 id="kmom10">kmom10</h2>
-    <p>Text om kursmoment</p>
+    <h3>Krav 1-3</h3>
+    <p>Jag valde att göra ett kortspel, närmare bestämt femkortspoker. Jag valde att endast ha två spelare, en dator och en spelare. För att skapa projektet så använde jag mig av modeller, kontroller och vyer. För att skapa spelets logik används modeller. De klasser som skapades var Actions, EvaluateCardHand, GameBank, OpponentAction, Player och FiveCardDrawGame. Här finns all logik för spelet och varje klass har hand om en specifik del. Alla klasser kombineras i FiveCardDrawGame klassen för att enklare kunna styra spelet genom kontrollen ProjectController. Kontrollen används sedan för att initiera spelet, ta emot data och hantera vyer. Vyerna skapar sedan spelets utseende med hjälp av datan från kontrollen.</p>
+
+    <h3>Krav 4</h3>
+    <p>För att skapa ett JSON API så användes en kontroller samt en vy. För att få fram datan till de olika sidorna hämtas objektet för spelet från session och metoder kallas från objektet. Jag skapade fem stycken olika routes med olika syften. Två routes för att se spelarens samt datorns nuvarande händer i spelet. En route för att se nuvarande pott och senaste satsningen/bet. En POST route som byter ett kort i spelarens hand för att kunna ändra pokerhanden. Den sista routern är resultatet av spelet. Om spelet inte är klart så visas inte resultatet.</p>
+
+    <h3>Allmänt stycke</h3>
+    <p>Jag tycker att det gick bra att utföra projektet. Det var klurigt och tog längre tid än väntat att skapa ett femkortspoker spel vad gäller logik och klasser. Det var mycket logiskt tänkande och problemlösning. Det känns som att jag kanske gjorde det mer komplicerat än nödvändigt med många klasser och mycket kod. Jag försökte dela upp logiken i olika klasser för att inte få klasserna allt för komplexa men jag tror att det skulle gå att lösa på ett smidigare sätt om jag hade haft mer tid och energi. I övrigt så tycker jag att det har gått bra att jobba med mvc strukturen och de tidigare uppgifterna har gett en bra grund inför projektet. </p>
+
+    <h3>Tankar om kursen</h3>
+    <p>Jag tycker att kursen har varit rolig och uppskattat den. Det har varit kul men även klurigt då det har varit mycket problemlösning. Jag tycker att kursmaterialet har varit bra och gett en bra bas att stå på inför de olika uppgifterna. Ibland har kursmomenten känts lite mastigare med många olika delar att utföra och hinna, vilket har känts lite utmanande. Men jag överlag nöjd med kursen. På en skala 1-10 så skulle jag ge kursen en 7a.</p>
+
 
 {% endblock %}
