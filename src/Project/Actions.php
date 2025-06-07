@@ -41,7 +41,7 @@ class Actions
      */
     public function getLastAction()
     {
-        return $this->lastAction;
+        return $this->lastAction ?? "none";
     }
 
     /**

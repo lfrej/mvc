@@ -20,7 +20,7 @@ class ActionsTest extends TestCase
         $this->assertInstanceOf("\App\Project\Actions", $actions);
 
         $lastAction = $actions->getLastAction();
-        $this->assertEquals(null, $lastAction);
+        $this->assertEquals("none", $lastAction);
 
         $actions->setLastAction("called");
         $lastAction = $actions->getLastAction();

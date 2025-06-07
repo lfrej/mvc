@@ -63,7 +63,7 @@ class PlayerTest extends TestCase
         $this->assertEquals("Three of a kind", $hand);
 
         $handWorth = $player->getHandWorth($hand);
-        $this->assertEquals("5", $handWorth);
+        $this->assertEquals("4", $handWorth);
     }
 
     /**

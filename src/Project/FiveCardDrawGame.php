@@ -74,11 +74,6 @@ class FiveCardDrawGame
             $card = $drawnCards[$i];
 
             $i % 2 === 1 ? $playerHand->addCards($card) : $opponentHand->addCards($card);
-            /*if ($i % 2 == 1) {
-                $playerHand->addCards($card);
-            } else {
-                $opponentHand->addCards($card);
-            }*/
         }
     }
 
@@ -257,6 +252,8 @@ class FiveCardDrawGame
 
                     $this->getPlayerAction()->reset();
                     $this->getOpponentAction()->reset();
+                    $this->getPlayer()->resetContribution();
+                    $this->getOpponent()->resetContribution();
                     break;
                 case "round2":
                     $this->setRound("showDown");
@@ -280,7 +277,7 @@ class FiveCardDrawGame
     }
 
     public function handleTurn()
-    {   
+    {
         $this->turn = $this->getTurn() === "Player" ? "Opponent" : "Player";
     }
 

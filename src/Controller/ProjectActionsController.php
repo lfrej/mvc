@@ -57,7 +57,7 @@ class ProjectActionsController extends AbstractController
 
         $this->addFlash(
             'notice',
-            $name . ' betted' . $result
+            $name . ' betted ' . $result
         );
 
         $opponentAction = $game->decideAction();

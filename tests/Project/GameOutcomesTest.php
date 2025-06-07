@@ -20,20 +20,20 @@ class GameOutcomesTest extends TestCase
 
         $opponent = $game->getOpponent();
         $opponentCards = [
-            new Card(1, 'H'),
-            new Card(1, 'H'),
-            new Card(2, 'D'),
-            new Card(2, 'C'),
+            new Card(7, 'H'),
+            new Card(8, 'H'),
+            new Card(9, 'D'),
+            new Card(10, 'C'),
             new Card(11, 'S'),
         ];
         $opponent->resetHand($opponentCards);
 
         $player = $game->getPlayer();
         $playerCards = [
-            new Card(7, 'H'),
-            new Card(8, 'H'),
-            new Card(9, 'D'),
-            new Card(10, 'C'),
+            new Card(1, 'H'),
+            new Card(1, 'H'),
+            new Card(2, 'D'),
+            new Card(2, 'C'),
             new Card(11, 'S'),
         ];
         $player->resetHand($playerCards);

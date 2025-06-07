@@ -80,7 +80,7 @@ class EvaluateCardHand
 
         sort($values);
 
-        $values == [1, 10, 11, 12, 13] ? [10, 11, 12, 13, 14] : $values;
+        $values = $values == [1, 10, 11, 12, 13] ? [10, 11, 12, 13, 14] : $values;
 
         $countValues = count($values);
         for ($i = 0; $i < $countValues - 1; $i++) {

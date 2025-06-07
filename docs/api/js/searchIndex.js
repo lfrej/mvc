@@ -1006,6 +1006,11 @@ Search.appendIndex(
             "summary": "Add\u0020to\u0020player\u0020contribution.",
             "url": "classes/App-Project-Player.html#method_addContribution"
         },                {
+            "fqsen": "\\App\\Project\\Player\u003A\u003AresetContribution\u0028\u0029",
+            "name": "resetContribution",
+            "summary": "Reset\u0020player\u0020contribution.",
+            "url": "classes/App-Project-Player.html#method_resetContribution"
+        },                {
             "fqsen": "\\App\\Project\\Player\u003A\u003AevaluateHand\u0028\u0029",
             "name": "evaluateHand",
             "summary": "Evaluate\u0020player\u0020hand.",

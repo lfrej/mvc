@@ -83,6 +83,14 @@ class Player
     }
 
     /**
+     * Reset player contribution.
+     */
+    public function resetContribution()
+    {
+        $this->contribution = 0;
+    }
+
+    /**
      * Evaluate player hand.
      *
      * @return string Returns what hand player has. Ex. "Three of a kind".
@@ -109,10 +117,11 @@ class Player
             "Four of a kind" => 8,
             "Full house" => 7,
             "Flush" => 6,
-            "Three of a kind" => 5,
-            "Two pair" => 4,
-            "One pair" => 3,
-            "High rank" => 2
+            "Straight" => 5,
+            "Three of a kind" => 4,
+            "Two pair" => 3,
+            "One pair" => 2,
+            "High rank" => 1
         ];
 
         return $handValues[$evaluatedHand] ?? 0;
