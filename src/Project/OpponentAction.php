@@ -38,26 +38,22 @@ class OpponentAction
             "High rank" => "fold"
         ];
 
-        if ($lastAction === "checked") {
-            foreach ($actionsCheck as $handName => $action) {
-                if ($cardHand === $handName) {
-                    return $action;
-                }
-            }
+        switch ($lastAction) {
+            case "checked":
+                $action = $actionsCheck[$cardHand] ?? "fold";
+                break;
+            case "betted":
+            case "checked":
+                $action = $actionsBet[$cardHand] ?? "fold";
+                break;
+            case "called":
+                $action = "call";
+                break;
+            default:
+                $action = "fold";
+                break;
         }
 
-        if ($lastAction === "betted" || $lastAction === "raised") {
-            foreach ($actionsBet as $handName => $action) {
-                if ($cardHand === $handName) {
-                    return $action;
-                }
-            }
-        }
-
-        if ($lastAction === "called") {
-            return "call";
-        }
-
-        return "fold";
+        return $action;
     }
 }

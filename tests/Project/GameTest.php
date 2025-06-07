@@ -93,7 +93,6 @@ class GameTest extends TestCase
     public function testFoldGame()
     {
         $game = new FiveCardDrawGame();
-        $round = $game->getRound();
 
         $playerAction = $game->getPlayerAction();
         $playerAction->fold();

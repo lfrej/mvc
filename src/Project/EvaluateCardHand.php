@@ -133,15 +133,15 @@ class EvaluateCardHand
         $isStraight = $this->checkStraight();
         $isRoyalFlush = $this->checkRoyalFlush();
 
-        if ($isRoyalFlush == true) {
+        if ($isRoyalFlush === true) {
             return "Royal flush";
         }
 
-        if ($isStraight == true && $suits == [5]) {
+        if ($isStraight === true && $suits === [5]) {
             return "Straight flush";
         }
 
-        if ($isStraight == true) {
+        if ($isStraight === true) {
             return "Straight";
         }
 
@@ -155,11 +155,8 @@ class EvaluateCardHand
             "High rank" => [1, 1, 1, 1, 1]
         ];
 
-        foreach ($hands as $x => $y) {
-            if ($ranks === $y) {
-                return $x;
-            }
-        }
-        return "none";
+        $pokerHand = $hands[$ranks]; 
+
+        return $pokerHand;
     }
 }
